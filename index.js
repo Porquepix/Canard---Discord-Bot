@@ -10,6 +10,10 @@ bot.on('message', (message) => {
     if (message.content === '!ping') {
         message.reply('pong');
     }
+
+    if (message.content === '!uptime') {
+        message.rely(`I am online for ${bot.uptime / 1000} seconds now !`);
+    }
 });
 
 bot.login(process.env.TOKEN);
