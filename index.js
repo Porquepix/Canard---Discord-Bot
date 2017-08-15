@@ -5,7 +5,7 @@ bot.on('ready', () => {
     bot.user.setAvatar('./canard.jpg').catch(console.error);
     bot.user.setGame('Game of life').catch(console.error);
 
-    bot.channels['346991686133743616'].send('Coin Coin: I am back online!');
+    bot.channels.get('346991686133743616').sendMessage('Coin Coin: I am back online!');
 });
 
 bot.on('message', (message) => {
