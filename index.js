@@ -12,7 +12,7 @@ bot.on('message', (message) => {
     }
 
     if (message.content === '!uptime') {
-        message.rely(`I am online for ${bot.uptime / 1000} seconds now !`);
+        message.reply(`I am online for ${bot.uptime / 1000} seconds now !`);
     }
 });
 
