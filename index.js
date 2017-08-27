@@ -9,7 +9,9 @@ const playSound = (channel, soundFile) => {
 
     channel.join()
     .then((connection) => {
-        connection.playFile(soundFile).on('end', _ => {
+        const dispatcher = connection.playFile(soundFile);
+        dispatcher.on('error', console.error);
+        dispatcher.on('end', _ => {
             connection.disconnect();
         });
     })
