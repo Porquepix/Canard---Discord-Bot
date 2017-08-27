@@ -2,6 +2,11 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 const playSound = (channel, soundFile) => {
+    if (!channel || !soundFile) {
+        console.error('Channel and soudFile must be defined!');
+        return;
+    }
+
     channel.join()
     .then((connection) => {
         connection.playFile(soundFile).on('end', _ => {
